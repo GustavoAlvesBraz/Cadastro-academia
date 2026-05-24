@@ -12,15 +12,17 @@ public class aluno {
     private int objetivo;
     private double pesoIdeal;
     private int qntRefeições;
-    private int diasTreino;
+
     private String dieta;
     private double diferença;
 
 
 
     //dados da dieta
-    private double proteina = peso * 2;
-
+    private double proteina;
+    private double consumoKcal;
+    private double kcalTotal;
+    private double fibra;
 
     //comandos para settar e gettar nome
     public String getNome() { return nome;} //aqui eu guardo permito guardar no nome
@@ -52,13 +54,6 @@ public class aluno {
     public void setQntRefeições(int qntRefeições) {
         this.qntRefeições = qntRefeições;
     }
-    //dias de treino
-    public int getDiasTreino() {
-        return diasTreino;
-    }
-    public void setDiasTreino(int diasTreino) {
-        this.diasTreino = diasTreino;
-    }
 
 
     public int getObjetivo() {return objetivo;}
@@ -83,6 +78,36 @@ public class aluno {
     }
     public void setDiferença(double diferença) {
         this.diferença = diferença;
+    }
+
+    public double getProteina() {
+        return proteina;
+    }
+    public void setProteina(double proteina) {
+        this.proteina = proteina;
+    }
+
+    public double getConsumoKcal() {
+        return consumoKcal;
+    }
+    public void setConsumoKcal(double consumoKcal) {
+        this.consumoKcal = consumoKcal;
+    }
+
+    public double getKcalTotal() {
+        return kcalTotal;
+    }
+
+    public void setKcalTotal(double kcalTotal) {
+        this.kcalTotal = kcalTotal;
+    }
+
+    public double getFibra() {
+        return fibra;
+    }
+
+    public void setFibra(double fibra) {
+        this.fibra = fibra;
     }
 }
 

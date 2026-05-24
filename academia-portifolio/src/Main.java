@@ -1,3 +1,4 @@
+import service.FichaDeTreino;
 import view.Cadastro;
 
 public class Main {
@@ -8,6 +9,7 @@ public class Main {
             //Chamando o void login cadastro da class cadastro.java
             cadastro.loginCadastro();
 
+            FichaDeTreino.treino();
 
         }
 

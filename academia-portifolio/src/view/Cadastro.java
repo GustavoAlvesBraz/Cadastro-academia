@@ -180,8 +180,8 @@ public class Cadastro {
         System.out.println("Altura: " + novoAluno.getIdade() + "cm");
         System.out.println("Peso: " + novoAluno.getPeso() + "Kg");
         System.out.println("Gênero: " + novoAluno.getGenero());
-        System.out.printf("Taxa Metabólica Basal (TMB): %.2f kcal\n", tmb);
-        System.out.println("===============================================================");
+        System.out.printf("Taxa Metabólica Basal (TMB): %.2f kcal\n", tmb );
+        System.out.println("=================================================================================");
 
         System.out.println("Defina seu objetivo");
         System.out.println("1 - Emagrecer 2- Ganhar massa (digite o número (1 || 2))");
@@ -267,5 +267,29 @@ public class Cadastro {
             }
 
         } while (!refeicaoValida);
+        serviceTmb.calcularProteina(novoAluno);
+        double gorduraBoa = serviceTmb.gorduraBoa(novoAluno);
+        double kcalRefeiçoes = serviceTmb.kcalRefeiçoes(novoAluno);
+        double objetivo = serviceTmb.objetivo(novoAluno);
+        double carbo = serviceTmb.carbo(novoAluno);
+        serviceTmb.calcularFibra(novoAluno);
+        System.out.println("=================================================================================");
+        System.out.println("Dieta de " + novoAluno.getQntRefeições() + " refeições");
+        System.out.printf("Consumo de calorias por refeição: %.2f Kcal\n", kcalRefeiçoes);
+        System.out.printf("Consumo de calorias totais dentro da sua dieta: %.2f Kcal\n", novoAluno.getKcalTotal());
+        System.out.printf("Consumo de carboidrato totais: %.2f \n", carbo );
+        System.out.printf("Consumo de carboidrato por refeição: %.2f \n", carbo / novoAluno.getQntRefeições());
+        System.out.printf("Consumo diário de: %.2f g de proteína\n", novoAluno.getProteina());
+        System.out.printf("Consumo de proteina por refeição: %.2f \n", novoAluno.getProteina() / novoAluno.getQntRefeições());
+        System.out.printf("Consumo diário de: %.2f g de gordura insaturada\n", gorduraBoa);
+        System.out.printf("Consumo de gordura insaturada por refeição: %.2f \n", gorduraBoa / novoAluno.getQntRefeições());
+        System.out.printf("Consumo diário de: %.2f g de fibras\n", novoAluno.getFibra());
+        System.out.printf("Consumo de fibras por refeição: %.2f \n", novoAluno.getFibra() / novoAluno.getQntRefeições());
+        System.out.println("=================================================================================");
+
+
+
+
+
     }
 }
